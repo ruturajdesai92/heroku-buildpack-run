@@ -48,7 +48,7 @@ fi
 if [[ -f "$ENV_DIR/BUILDPACK_RUN" ]]; then
   BUILDPACK_RUN_COMMANDS=$(cat "$ENV_DIR/BUILDPACK_RUN")
 elif [[ -f buildpack-run.sh ]]; then
-  BUILDPACK_RUN_COMMANDS=. buildpack-run.sh
+  BUILDPACK_RUN_COMMANDS=". buildpack-run.sh"
 else
   echo "Error: can't apply buildpack" | arrow-err
   cat <<EOF | indent-err
